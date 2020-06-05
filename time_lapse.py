@@ -3,6 +3,8 @@ Time-lapse project
 
 About: A program that speeds up long videos. Uses OpenCV
 and some other supporting libraries that make life eaiser.
+Codecs and file extentions may need to change depending on
+your OS. 
 
 Author: Grayson Hadley
 """
