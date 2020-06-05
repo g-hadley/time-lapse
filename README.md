@@ -1,2 +1,2 @@
-# time-lapse
+# Time-lapse
 Time-lapse project using OpenCV
