@@ -3,8 +3,6 @@ Time-lapse project
 
 About: A program that speeds up long videos. Uses OpenCV
 and some other supporting libraries that make life eaiser.
-Codecs and file extentions may need to change depending on
-your OS. 
 
 Author: Grayson Hadley
 """
@@ -30,13 +28,13 @@ def is_Long_Enough(video):
     fps = video.get(cv.CAP_PROP_FPS)
     numFrames = video.get(cv.CAP_PROP_FRAME_COUNT)
 
-    if((numFrames / fps) >= 6):
+    if((numFrames / fps) >= __speed__):
         return True
     else:
         return False
 
 def process_Video(cap, out):
-    """ Gets every 6th frame and saves it """
+    """ Gets every nth frame and saves it """
     count = 0
 
     while(cap.isOpened()):
@@ -55,6 +53,7 @@ def process_Video(cap, out):
 
 def main():
     """ Main function """
+    
 
     # Makes each file output name unique
     nowStr = datetime.datetime.now()
@@ -82,7 +81,7 @@ def main():
         out.release()
         cv.destroyAllWindows()
     else:
-        print("ERROR: Video not 6 seconds or longer")
+        print("ERROR: Video needs to be longer than ", __speed__ ,"frames")
 
 if __name__ == "__main__":
     main()
